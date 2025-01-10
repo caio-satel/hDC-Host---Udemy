@@ -38,10 +38,11 @@ ul {
 .nav-items {
     display: flex;
     gap: 25px;
-	line-height: 80px;
+    line-height: 80px;
 }
 
 .nav-items li {
+    font-size: 1rem;
     text-transform: uppercase;
 }
 
@@ -58,7 +59,6 @@ ul {
 
 #btn-login:hover {
     background-color: #22BB5F;
-    color: #fff;
 }
 
 /* home */
@@ -67,8 +67,7 @@ ul {
     background-image: url("../img/mainbanner.png");
     background-position: center;
     background-size: cover;
-    padding: 10em 0;
-	position: relative;
+    padding: 10em 3em;
 }
 
 #home h1, #home p{
@@ -94,7 +93,6 @@ ul {
 
 .specialty-content {
     display: flex;
-    list-style: none;
     width: 90%;
     margin-left: auto;
     margin-right: auto;
@@ -105,27 +103,26 @@ ul {
     display: flex;
     flex: 1 1 200px;
     flex-direction: column;
-    flex-wrap: wrap;
     align-items: center;
     padding: 20px;
     gap: 25px;
 }
 
-.icon {
-    width: 60px;
-    height: 60px;
+.fas {
+    font-size: 60px;
+    margin-bottom: 15px;
 }
 
-#icon1 {
-    background-color: green;
+.fa-shield-alt {
+    color: green;
 }
 
-#icon2 {
-    background-color: red;
+.fa-rocket {
+    color: red;
 }
 
-#icon3 {
-    background-color: orange;
+.fa-comments {
+    color: orange;
 }
 
 .specialty-content li h2 {
@@ -160,13 +157,15 @@ ul {
 .plans-container {
     display: flex;
     justify-content: center;
-    flex-wrap: wrap;
+    width: 90%;
+    margin-right: auto;
+    margin-left: auto;
     gap: 5px;
 }
 
 .plans-container .plan-card {
     flex: 1 1 200px;
-    max-width: 300px;
+    max-width: 275px;
     margin-left: 20px;
     margin-right: 20px;
 }
@@ -224,6 +223,12 @@ ul {
     text-align: center;
 }
 
+.search-content {
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
 .search-content h2 {
     font-size: 3rem;
     color: #fff;
@@ -237,7 +242,6 @@ ul {
 }
 
 .search-content #form-search {
-    width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -253,7 +257,6 @@ ul {
 }
 
 .search-content input[type="submit"] {
-    min-width: 10%;
     padding: 15px 20px;
     font-size: 1.2rem;
     color: #fff;
@@ -268,7 +271,7 @@ ul {
 
 .section-contact {
     text-align: center;
-    padding: 5em 0;
+    padding: 5em 2em;
 }
 
 .section-contact h2 {
@@ -284,10 +287,16 @@ ul {
     margin-right: 10px;
 }
 
+#form-contact {
+    width: 90%;
+    margin-right: auto;
+    margin-left: auto;
+}
+
 .section-contact input, .section-contact textarea {
 	width: 200px;
 	padding: 10px 20px;
-	font-size: 16px;
+	font-size: 1rem;
 	border-radius: 5px;
 	border: 1px solid #CCC;
 	margin-bottom: 20px;
@@ -306,7 +315,7 @@ ul {
 	position: relative;
 	margin-left: auto;
 	margin-right: auto;
-	width: 468px;
+    width: 468px;
 	height: 150px;
 }
 
@@ -326,4 +335,59 @@ footer {
 	text-align: center;
 	font-weight: bold;
 	margin-bottom: 50px;
+}
+
+/* responsivo - media queries */
+
+@media (max-width: 1150px) {
+    .plans-container {
+        width: 95%;
+    }
+    .plan-card {
+        margin-left: 5px;
+        margin-right: 5px;
+    }
+}
+
+@media (max-width: 900px) {
+    .plans-container, .plans-container ul {
+        flex-wrap: wrap;
+    }
+}
+
+@media (max-width: 576px) {
+    html, body {
+        overflow-x: hidden;
+    }
+    .nav-items {
+        gap: 15px;
+    }
+    .nav-items li {
+        font-size: .875rem;
+    }
+    #home p {
+        font-size: 1.5rem;
+    }
+    .plans-container {
+        gap: 25px;
+    }
+    .search-content h2 {
+        font-size: 2.2rem;
+    }
+    .search-content p {
+        font-size: 1.2rem;
+    }
+    .search-content input[type="text"] {
+        width: 60%;
+        padding: 15px;
+    }
+    .search-content input[type="submit"] {
+        padding: 10px 15px;
+    }
+    .section-contact input[type="text"], .section-contact input[type="email"] , .section-contact textarea {
+        display: block;
+        width: 100%;
+        margin-left: 0;
+        margin-right: 0;
+    }
 }
